@@ -1,7 +1,5 @@
 a,b,c=input("Enter A,B and C space-separated\n").split()
-a=float(a)
-b=float(b)
-c=float(c)
+a,b,c=float(a),float(b),float(c)
 pi=3.14159
 triangle=a*c/2
 circle=pi*c**2
