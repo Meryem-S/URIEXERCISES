@@ -4,14 +4,18 @@ y=[1,0.50,0.25,0.10,0.05,0.01]
 list_1=[]
 list_2=[]
 
-for i in x:
-    list_1.append(a//i)
-    a=a%i
 
-print("NOTAS:"+"\n",list_1[0],"nota(s) de R$",'%.2f' % x[0],"\n",list_1[1],"nota(s) de R$",'%.2f' % x[1],"\n",list_1[2],"nota(s) de R$",'%.2f' % x[2],"\n",list_1[3],"nota(s) de R$",'%.2f' % x[3],"\n",list_1[4],"nota(s) de R$",'%.2f' % x[4],"\n",list_1[5],"nota(s) de R$",'%.2f' % x[5])
+def money(list,kopek,money_type, total_money):
+    for i in kopek:
+        list.append(total_money//i)
+        total_money=total_money%i
 
-for j in y:
-    list_2.append(a//j)
-    a=a%j
+    print(money_type,":"+"\n",list[0],"nota(s) de R$",'%.2f' % kopek[0],"\n",list[1],"nota(s) de R$",'%.2f' % kopek[1],"\n",list[2],"nota(s) de R$",'%.2f' % kopek[2],"\n",list[3],"nota(s) de R$",'%.2f' % kopek[3],"\n",list[4],"nota(s) de R$",'%.2f' % kopek[4],"\n",list[5],"nota(s) de R$",'%.2f' % kopek[5])
+    print(total_money) # how much money i still have to gave
+    return total_money
 
-print("MOEDAS:"+"\n",list_2[0],"nota(s) de R$",'%.2f' % y[0],"\n",list_2[1],"nota(s) de R$",'%.2f' % y[1],"\n",list_2[2],"nota(s) de R$",'%.2f' % y[2],"\n",list_2[3],"nota(s) de R$",'%.2f' % y[3],"\n",list_2[4],"nota(s) de R$",'%.2f' % y[4],"\n",list_2[5],"nota(s) de R$",'%.2f' % y[5])
+
+rest=money(list_1,x,"NOTAS", a)
+
+if rest != 0:
+    money(list_2,y,"COINS", rest)
